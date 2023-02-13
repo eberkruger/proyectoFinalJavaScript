@@ -18,11 +18,11 @@ function miPrograma(productos) {
       let tarjetaProducto = document.createElement("div");
       tarjetaProducto.classList.add("card");
       tarjetaProducto.innerHTML = `
-          <img src="${imgUrl}" alt="${nombre}">
+          <img src=${imgUrl} alt=${nombre}>
           <div class="descripcion">
             <p class="nombreProducto">${nombre}</p>
             <p class="precioProducto">$${precio}</p>
-            <button class="agregarCarrito" id="${id}">
+            <button class="agregarCarrito" id=${id}>
             <img src="../assets/imagenesSVG/bxs-cart.svg" alt="Carrito de compras"/>
             </button>
           </div>
@@ -149,10 +149,9 @@ function miPrograma(productos) {
   function agregarAlCarrito(e) {
     let id = e.currentTarget.id;
     const productoAgregado = productos.find((producto) => producto.id == id);
-    
+    console.log(productoAgregado)
     lanzarToastify()
-
-    if ((carrito.some((producto) => producto.id) == id)) {
+    if (carrito.some((producto) => producto.id == id)) {
       const index = carrito.findIndex((producto) => producto.id == id);
       carrito[index].cantidad++;
     } else {

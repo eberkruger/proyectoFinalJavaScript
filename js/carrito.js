@@ -135,10 +135,7 @@ function precioTotal() {
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
   todosProductosCarrito.length = 0;
-  localStorage.setItem(
-    "productosEnCarrito",
-    JSON.stringify(todosProductosCarrito)
-  );
+  localStorage.setItem("productosEnCarrito", JSON.stringify(todosProductosCarrito));
 
   carritoVacio.classList.toggle("disabled");
   productosCarrito.classList.toggle("disabled");
