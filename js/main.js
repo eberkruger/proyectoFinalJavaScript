@@ -152,7 +152,7 @@ function miPrograma(productos) {
     
     lanzarToastify()
 
-    if (carrito.some((producto) => producto.id == id)) {
+    if ((carrito.some((producto) => producto.id) == id)) {
       const index = carrito.findIndex((producto) => producto.id == id);
       carrito[index].cantidad++;
     } else {
