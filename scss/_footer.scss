@@ -1,0 +1,33 @@
+.footer {
+  font-family: "Lato", sans-serif;
+  color: white;
+  background-color: transparent;
+  margin: 0;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+
+
+  h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
+.imagenSvgFooter {
+  width: auto;
+  height: 6vh;
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+.redes {
+  padding-top: 3vw;
+}

@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "nombre": "Dpi 7200",
+        "categoria": "Mouse",
+        "precio": 9500,
+        "imgUrl": "../assets/productos/mouse/dpi7200/image1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Logitech G502 Hero",
+        "categoria": "Mouse",
+        "precio": 11200,
+        "imgUrl": "../assets/productos/mouse/logitechG502Hero/image1.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Wolf X13",
+        "categoria": "Mouse",
+        "precio": 16200,
+        "imgUrl": "../assets/productos/mouse/wolfX13/image1.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Acer Predator Helios 300",
+        "categoria": "Notebook",
+        "precio": 250000,
+        "imgUrl": "../assets/productos/notebooks/acerPredatorHelios300/image1.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Asus Tuff A15",
+        "categoria": "Notebook",
+        "precio": 350000,
+        "imgUrl": "../assets/productos/notebooks/asusTufA15/image1.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "HP Pavilion",
+        "categoria": "Notebook",
+        "precio": 230000,
+        "imgUrl": "../assets/productos/notebooks/hpPavilion/image1.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Krom Kernel",
+        "categoria": "Teclado",
+        "precio": 8000,
+        "imgUrl": "../assets/productos/teclados/kromkernel/image1.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Kuma Krom",
+        "categoria": "Teclado",
+        "precio": 13200,
+        "imgUrl": "../assets/productos/teclados/kumaKrom/image1.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Vigor GK30 MSI",
+        "categoria": "Teclado",
+        "precio": 18700,
+        "imgUrl": "../assets/productos/teclados/vigorGK30MSI/image1.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Black Shark V2",
+        "categoria": "Auricular",
+        "precio": 12000,
+        "imgUrl": "../assets/productos/auriculares/blackSharkv2/image1.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Hyper X Cloud",
+        "categoria": "Auricular",
+        "precio": 15000,
+        "imgUrl": "../assets/productos/auriculares/hyperXCloud/image1.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Steel Series",
+        "categoria": "Auricular",
+        "precio": 9000,
+        "imgUrl": "../assets/productos/auriculares/steelSeries/image1.jpg"
+    }
+]

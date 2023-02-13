@@ -1,0 +1,213 @@
+.buscar {
+
+    .seguirComprando {
+        border: transparent solid 2px;
+        border-radius: 4px;
+        a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;        
+        }
+
+        &:hover {
+            background-color: $color3;
+            color: white;
+        }
+
+        &:active {
+            transform: scale(0.94);
+        }
+    }
+}
+
+.tituloCarrito {
+    height: 15rem;
+    font-size: 4rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contenedorCarrito {
+    margin-bottom: 3rem;
+    height: auto;
+}
+
+.carritoVacio {
+    display: flex;
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    height: 80vh;
+    padding-top: 10rem;
+}
+
+.carritoComprado {
+    display: flex;
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+}
+
+.productosCarrito {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+
+    small {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .productoAgregado {
+         display: flex;
+         flex-wrap: wrap;
+         background-color: rgb(235, 234, 234);
+         justify-content: center;
+         justify-content: space-between;
+         align-items: center;
+         border-radius: 6px;
+         padding: 2rem;
+         margin: 2rem;
+         
+        p {
+            font-weight: bold;
+        }
+
+        img {
+            height: 80px;
+            width: 80px;
+            border-radius: 6px;
+            padding: 0.5rem;
+        }
+
+        .botonesCantidades {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            button {
+                border: solid 2px black;
+                border-radius: 6px;
+                background-color: transparent;
+                font-weight: 900;
+
+                &:hover {
+                    background-color: $color3;
+                    color: white;
+                }
+                
+                &:active {
+                    transform: scale(0.9);
+                }
+
+                img {
+                    height: auto;
+                    width: 2.5rem;
+                }
+            }
+        }
+
+        .carritoProductoCantidad {
+            text-align: center;
+        }
+
+        .carritoProductoEliminar {
+            background-color: transparent;
+            border: none;
+        }
+    }
+}
+
+.accionesCarrito {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 2rem;
+    margin: 2rem;
+    margin-bottom: 15rem;
+
+    .accionesCarritoIzquierda {
+        display: flex;
+
+        .accionesCarritoVaciar {
+            font-size: 1.5rem;
+            border-radius: 6px;
+            padding: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: $color3;
+                color: white;
+            }
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+    
+    .accionesCarritoDerecha {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        justify-content: center;
+        text-align: center;
+        background-color: transparent;
+        gap: 2rem;
+
+        .accionesCarritoTotal {
+            display: flex;
+            background-color: $color3;
+            color: white;
+            gap: 1rem;
+            justify-content: space-between;
+            border-radius: 6px;
+            padding: 1rem;
+            font-size: 1.5rem;
+
+            #total {
+                font-weight: 700;
+            }
+        }
+
+        .accionesCarritoComprar {
+            font-size: 1.5rem;
+            border-radius: 6px;
+            padding: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: $color3;
+                color: white;
+            }
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}
+
+.disabled {
+    display: none;
+}

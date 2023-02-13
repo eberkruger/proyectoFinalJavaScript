@@ -1,0 +1,35 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 55rem;
+    position: relative;
+    color: white;
+
+    h2 {
+        font-size: 5rem;
+        font-weight: 700;
+    }
+
+    h4 {
+        font-size: 4rem;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+}
+
+.toastify {
+    background-color: $color3;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    border: 2px solid white;
+    border-radius: 6px;
+}
