@@ -1,7 +1,11 @@
 async function pedirInfo() {
-  const resp = await fetch("../json/productos.json")
-  const productosDB = await resp.json()
-  miPrograma(productosDB)
+  try {
+    const resp = await fetch("../json/productos.json")
+    const productosDB = await resp.json()
+    miPrograma(productosDB)
+  } catch (error) {
+    console.log(error)
+  }
 }
 pedirInfo()
 
