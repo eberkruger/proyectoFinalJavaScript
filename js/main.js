@@ -4,7 +4,6 @@ async function pedirInfo() {
     const productosDB = await resp.json()
     miPrograma(productosDB)
   } catch (error) {
-    console.log(error)
   }
 }
 pedirInfo()

@@ -4,9 +4,7 @@ const carritoVacio = document.getElementById("carritoVacio");
 const productosCarrito = document.getElementById("productosCarrito");
 const accionesCarrito = document.getElementById("accionesCarrito");
 const carritoComprado = document.getElementById("carritoComprado");
-let botonesEliminar = document.getElementsByClassName(
-  "carritoProductoEliminar"
-);
+let botonesEliminar = document.getElementsByClassName("carritoProductoEliminar");
 let botonVaciar = document.getElementById("accionesCarritoVaciar");
 const precioCarritoTotal = document.getElementById("total");
 let botonComprar = document.getElementById("accionesCarritoComprar");
