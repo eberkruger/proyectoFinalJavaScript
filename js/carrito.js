@@ -11,54 +11,61 @@ let botonComprar = document.getElementById("accionesCarritoComprar");
 
 function renderizarCarrito() {
   if (todosProductosCarrito && todosProductosCarrito.length > 0) {
-    carritoVacio.classList.add("disabled");
-    productosCarrito.classList.remove("disabled");
-    accionesCarrito.classList.remove("disabled");
+    try {
+      carritoVacio.classList.add("disabled");
+      productosCarrito.classList.remove("disabled");
+      accionesCarrito.classList.remove("disabled");
+  
+      productosCarrito.innerHTML = "";
+  
+      todosProductosCarrito.forEach(({imgUrl, nombre, cantidad, precio, id}) => {
+        let productoAgregadoCarrito = document.createElement("div");
+        productoAgregadoCarrito.classList.add("productoAgregado");
+        productoAgregadoCarrito.innerHTML = `
+                  <img class="productoAgragadoImagen" src="${imgUrl}" alt="${nombre}">
+                  <div class="carritoProductoNombre">
+                    <small>Nombre</small>
+                    <h4>${nombre}</h4>
+                  </div>
+                  <div class="botonesCantidades">
+                    <button id=inc${id} onclick=incrementarUnidad(${id})><img src="../assets/imagenesSVG/add-outline.svg"/></button>
+                    <button id=dec${id} onclick=decrementarUnidad(${id})><img src="../assets/imagenesSVG/remove-outline.svg"/></button>
+                  </div>
+                  <div class="carritoProductoCantidad">
+                    <small>Cantidad</small>
+                    <p>${cantidad}</p>
+                  </div>
+                  <div class="carritoProductoPrecio">
+                    <small>Precio</small>
+                    <p>${precio}</p>
+                  </div>
+                  <div class="carritoProductoSubtotal">
+                    <small>Subtotal</small>
+                    <p>${precio * cantidad}</p>
+                  </div>
+                  <button id="${id}"class="carritoProductoEliminar"><lord-icon
+                  src="https://cdn.lordicon.com/jmkrnisz.json"
+                  trigger="hover"
+                  colors="primary:#e83a30"
+                  style="width:32px;height:32px">
+                  </lord-icon></button>
+              `;
+  
+        productosCarrito.appendChild(productoAgregadoCarrito);
+      });
+  
+      ActualizarBotonesEliminar();
+      precioTotal();
+    } catch (error) {
 
-    productosCarrito.innerHTML = "";
-
-    todosProductosCarrito.forEach(({imgUrl, nombre, cantidad, precio, id}) => {
-      let productoAgregadoCarrito = document.createElement("div");
-      productoAgregadoCarrito.classList.add("productoAgregado");
-      productoAgregadoCarrito.innerHTML = `
-                <img class="productoAgragadoImagen" src="${imgUrl}" alt="${nombre}">
-                <div class="carritoProductoNombre">
-                  <small>Nombre</small>
-                  <h4>${nombre}</h4>
-                </div>
-                <div class="botonesCantidades">
-                  <button id=inc${id} onclick=incrementarUnidad(${id})><img src="../assets/imagenesSVG/add-outline.svg"/></button>
-                  <button id=dec${id} onclick=decrementarUnidad(${id})><img src="../assets/imagenesSVG/remove-outline.svg"/></button>
-                </div>
-                <div class="carritoProductoCantidad">
-                  <small>Cantidad</small>
-                  <p>${cantidad}</p>
-                </div>
-                <div class="carritoProductoPrecio">
-                  <small>Precio</small>
-                  <p>${precio}</p>
-                </div>
-                <div class="carritoProductoSubtotal">
-                  <small>Subtotal</small>
-                  <p>${precio * cantidad}</p>
-                </div>
-                <button id="${id}"class="carritoProductoEliminar"><lord-icon
-                src="https://cdn.lordicon.com/jmkrnisz.json"
-                trigger="hover"
-                colors="primary:#e83a30"
-                style="width:32px;height:32px">
-                </lord-icon></button>
-            `;
-
-      productosCarrito.appendChild(productoAgregadoCarrito);
-    });
-
-    ActualizarBotonesEliminar();
-    precioTotal();
-  } else {
-    carritoVacio.classList.remove("disabled");
-    productosCarrito.classList.add("disabled");
-    accionesCarrito.classList.add("disabled");
+    }
+    } else {
+      try{
+        carritoVacio.classList.remove("disabled");
+        productosCarrito.classList.add("disabled");
+        accionesCarrito.classList.add("disabled");
+      } catch (error) {
+      }
   }
 }
 renderizarCarrito();
@@ -110,26 +117,29 @@ function eliminarDelCarrito(e) {
   localStorage.setItem("productosEnCarrito", JSON.stringify(todosProductosCarrito));
 }
 
-botonVaciar.addEventListener("click", vaciarCarrito);
-function vaciarCarrito() {
-  todosProductosCarrito.length = 0;
-  localStorage.setItem("productosEnCarrito", JSON.stringify(todosProductosCarrito));
-  renderizarCarrito();
-  lanzarSweetAlert(
-    "Carrito vacío",
-    "Siga reccoriendo la tienda",
-    "success",
-    2000,
-    false,
-    "#e73958"
-  );
+try {
+  botonVaciar.addEventListener("click", vaciarCarrito);
+  function vaciarCarrito() {
+    todosProductosCarrito.length = 0;
+    localStorage.setItem("productosEnCarrito", JSON.stringify(todosProductosCarrito));
+    renderizarCarrito();
+    lanzarSweetAlert(
+      "Carrito vacío",
+      "Siga reccoriendo la tienda",
+      "success",
+      2000,
+      false,
+      "#e73958"
+    );
+  }
+} catch (error) {
 }
 
 function precioTotal() {
   const totalCalculadoProductos = todosProductosCarrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad,0);
   precioCarritoTotal.innerText = `$${totalCalculadoProductos}`;
 }
-
+try {
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
   todosProductosCarrito.length = 0;
@@ -147,6 +157,8 @@ function comprarCarrito() {
     false,
     "#e73958"
   );
+}
+} catch (error) {
 }
 
 function lanzarSweetAlert(
