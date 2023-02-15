@@ -53,11 +53,9 @@ function renderizarCarrito() {
   
         productosCarrito.appendChild(productoAgregadoCarrito);
       });
-  
       ActualizarBotonesEliminar();
       precioTotal();
     } catch (error) {
-
     }
     } else {
       try{
